@@ -22,11 +22,11 @@ public class sudocode
                 if(solve(n,row,coloumn+1,board))     // Checking for next possibility with nex  column
                     return true;
             }
-            board[row][coloumn]=0;                  
+            board[row][coloumn]=0;                   //if our assumption is wrong then replace with zero
         }
         return false;
     }
-    static void print(int n,int[][] board)         //print board
+    static void print(int n,int[][] board)         
     {
         for(int i=0;i<n;i++)
         {
@@ -106,7 +106,7 @@ public class sudocode
                 if(row<=n && coloumn<=n && row>0 && coloumn>0)
                 {
                     System.out.println("Enter the value at "+row+" row and "+coloumn+" coloumn:");
-                    int value=sc.nextInt();//char value=in.next().charAt(0);
+                    int value=sc.nextInt();        
                     if(value<=n && value>0)
                     {
                         if(check_submatrix(row,coloumn,board,value))
@@ -130,15 +130,14 @@ public class sudocode
                     System.out.println("you entered rows or coloums are beyond the size");
                 }
                 print(n,board);
-                System.out.println("Do you want to Enter another Number(yes/no):");
+                System.out.println("Do you want to Enter another Number(y/n):");
                 flag=sc.next().charAt(0);
             }while(flag == 'y');
         }
         print(n,board);
     }
-    public static void main(String[]  a){
-        //Scanner in=new Scanner(System.in);
-         System.out.print("Enter the size:9\n");
+    public static void main(String[] a){
+        System.out.print("Enter the size:9\n");
         int n=9;
         int[][] board=new int[n][n]; 
         for(int i=0;i<n;i++)
