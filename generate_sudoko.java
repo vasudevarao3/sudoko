@@ -85,13 +85,16 @@ public class generate_sudoko{
                 int value=random.nextInt(9)+1;
                 if(check_submatrix(row,coloumn,board,value) && check_row(row,coloumn,board,value) && check_coloumn(row,coloumn,board,value))
                 {
-                    board[row-1][coloumn-1]=value;
-                    i++;
+                    if(board[row-1][coloumn-1]==0)
+                    {
+                        board[row-1][coloumn-1]=value;
+                        i++;
+                    }
                 }
             }
             print(9,board);
         }
         else
-            System.out.println("Enter the valid Number");
+            System.out.println(n+" must not exceed 81");
     }   
 }
