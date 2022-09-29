@@ -1,3 +1,5 @@
+// This code solve the sudoko
+
 import java.util.Scanner;
 public class sudocode
 {
