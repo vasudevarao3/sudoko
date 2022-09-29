@@ -1,3 +1,5 @@
+//This code will Generate sudoko according to the required difficulty level
+
 import java.util.*;
 public class generate_sudoko{
     static void print(int n,int[][] board)
@@ -70,8 +72,8 @@ public class generate_sudoko{
     {
         Random random=new Random();
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the no.of places you want to fill in genrated sudoko");
-        int n=sc.nextInt();   
+        System.out.println("Enter the no.of places you want to fill in genrated sudoko");        //if n is too low or too high,it is easy to solve
+        int n=sc.nextInt();                                                                      //better give n value in between 10 to 20 for difficult level
         int[][] board=new int[9][9];
         int i=0;
         if(n<=81 && n>=0)
