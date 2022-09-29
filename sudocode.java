@@ -22,12 +22,11 @@ public class sudocode
                 if(solve(n,row,coloumn+1,board))     // Checking for next possibility with nex  column
                     return true;
             }
-            board[row][coloumn]=0;
+            board[row][coloumn]=0;                  
         }
         return false;
-
     }
-    static void print(int n,int[][] board)
+    static void print(int n,int[][] board)         //print board
     {
         for(int i=0;i<n;i++)
         {
@@ -38,7 +37,7 @@ public class sudocode
             System.out.print("\n");
         }
     }
-    static boolean check_row(int row,int coloumn,int[][] board,int value)
+    static boolean check_row(int row,int coloumn,int[][] board,int value)       
     {
 
         for(int c=0;c<9;c++)
@@ -141,23 +140,29 @@ public class sudocode
         //Scanner in=new Scanner(System.in);
          System.out.print("Enter the size:9\n");
         int n=9;
-        int[][] board={{0,0,0,6,0,0,0,4,0},
+        int[][] board=new int[n][n];
+            {0,1,0,0,0,9,0,0,0}}; 
+       for(int i=0;i<n;i++)
+            for(int j=0;j<n;j++)
+                board[i][j]=0;
+        reading_values(n,board);
+        if(solve(9,0,0,board))   
+        {
+            System.out.println("Solved sudoco:\n");
+            print(n,board);
+        } 
+        else
+        {
+            System.out.println("Sudoko not possible");
+        }
+    }
+}
+
+          /*{{0,0,0,6,0,0,0,4,0},
             {6,8,0,0,0,4,1,3,0},
             {4,0,0,0,1,0,8,0,0},
             {0,0,0,0,0,0,0,5,8},
             {9,4,8,5,0,2,7,6,1},
             {7,5,0,0,0,0,0,0,0},
             {0,0,2,0,0,0,0,0,7},
-            {0,7,9,1,0,0,0,8,5},
-            {0,1,0,0,0,9,0,0,0}}; /*new int[n][n];
-       /* for(int i=0;i<n;i++)
-            for(int j=0;j<n;j++)
-                board[i][j]=0;*/
-        //reading_values(n,board);
-        if(solve(9,0,0,board))   
-        {
-            System.out.println("Solved sudoco:\n");
-            print(n,board);
-        } 
-    }
-}
+            {0,7,9,1,0,0,0,8,5},*/
